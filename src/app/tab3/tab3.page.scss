@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+
+
+ion-content{
+  --background: #fff;
+}
+ion-grid {
+    max-width: 100%;
+    padding: 5px;
+  }
+  
+  ion-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  ion-col {
+    text-align: left;
+  }
+  
+  ion-label {
+    width: 150px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  ion-input,
+  ion-select {
+    width: calc(100% - 30px); /* Subtract label width and margin-right */
+  }
+  
+  ion-button {
+    margin-top: 20px;
+  }
+  h2{
+    border-bottom: 2px solid;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #c2c2c2;
+  }
+  @media(max-widht:360px){
+    table{
+      width: auto;
+    }
+  }

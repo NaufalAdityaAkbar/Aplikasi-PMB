@@ -1,0 +1,128 @@
+<!-- your-component.component.html -->
+<ion-content>
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation" *ngFor="let tab of tabs">
+      <button class="nav-link" [class.active]="activeTab === tab.id" (click)="activateTab(tab.id)">{{ tab.label }}</button>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div *ngIf="activeTab === 'home'">
+      <ion-grid>
+
+        <ion-row>
+          <ion-col>
+            <ion-label>Nama Lengkap</ion-label>
+              <ion-input [(ngModel)]="nama" placeholder="Nama Lengkap"></ion-input>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Jenis Kelamin</ion-label>
+            <ion-select [(ngModel)]="jenis_kelamin" placeholder="Laki-Laki">
+              <ion-select-option value="Laki-Laki">Laki-Laki</ion-select-option>
+              <ion-select-option value="Perempuan">Perempuan</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>No.Hanphone</ion-label>
+            <ion-input [(ngModel)]="nohp" placeholder="+62"></ion-input>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Email</ion-label>
+            <ion-input [(ngModel)]="email" placeholder="Alamat email"></ion-input>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Asal Sekolah</ion-label>
+            <ion-input [(ngModel)]="asalsklh" placeholder="Asal Sekolah"></ion-input>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Program Studi</ion-label>
+            <ion-select [(ngModel)]="programstudi" placeholder="Sarjana Informasi(S1)">
+              <ion-select-option value="TI">Teknik Informatika S1</ion-select-option>
+              <ion-select-option value="SI">Sistem Informasi S1</ion-select-option>
+              <ion-select-option value="Tekin">Teknik Informasi S1</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Jenjang</ion-label>
+            <ion-select [(ngModel)]="jenjang" placeholder="Starta 1(S1)">
+              <ion-select-option value="D3">Diploma 3</ion-select-option>
+              <ion-select-option value="S1">Strata 1</ion-select-option>
+              <ion-select-option value="S2">Strata 2</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Kelas</ion-label>
+            <ion-select [(ngModel)]="kelas" placeholder="Kelas A">
+              <ion-select-option value="A">Kelas A</ion-select-option>
+              <ion-select-option value="B">Kelas B</ion-select-option>
+              <ion-select-option value="C">Kelas C</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-label>Info Kampus</ion-label>
+            <ion-select [(ngModel)]="info_kmps" placeholder="Mahasiswa UNBIN">
+              <ion-select-option value="Media">Sosial Media</ion-select-option>
+              <ion-select-option value="Mahasiswa">Mahasiswa UNBIN</ion-select-option>
+              <ion-select-option value="Sodara">Sodara/Kerabat</ion-select-option>
+            </ion-select>
+          </ion-col>
+        </ion-row>
+    
+        <ion-row>
+          <ion-col>
+            <ion-button (click)="addData()">
+              Daftar
+              <ion-icon slot="end" name="star"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+    
+      </ion-grid>
+    
+    </div>
+    <div *ngIf="activeTab === 'profile'">Profile Content</div>
+    <div *ngIf="activeTab === 'contact'">
+        <h2>Data Calon Mahasiswa</h2>
+
+<table >
+  <tr >
+    <th>No</th>
+    <th>RegId</th>
+    <th>Password</th>
+    <th>Pratest</th>
+    <th>Status</th>
+  </tr>
+  <tr *ngFor="let data of AllData" >
+    <td>{{ data.kd }}</td>
+    <td>{{ data.regid }}</td>
+    <td>{{ data.password }}</td>
+    <td>{{ data.pratest }}</td>
+    <td [ngStyle]="getStatusColor(data.status)">{{ data.status }}</td>
+  </tr >
+</table>
+      </div>
+      </div>
+</ion-content>
