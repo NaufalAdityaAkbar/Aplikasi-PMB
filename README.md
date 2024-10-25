@@ -8,3 +8,4 @@ Username dan password bisa menggunakan npm mahasiswa semester 3 yang terdaftar
 insert dan get data untuk pendaftaran di cpanel tbl_pendaftar dan regid, password, status menggunakan trigger
 <br> jika status bernilai 0 = 'Menunggu Pembayaran'<br>
     jika status bernilai 1 = 'Pembayaran berhasil'
+Bahasa pemograman type script dan framework angular
